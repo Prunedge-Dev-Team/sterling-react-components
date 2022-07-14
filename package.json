@@ -1,6 +1,9 @@
 {
-  "name": "sterling-react-components",
+  "name": "@Prunedge-Dev-Team/sterling-react-components",
   "version": "0.0.1",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/Prunedge-Dev-Team"
+  },
   "description": "",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
