@@ -4,3 +4,5 @@ dist/
 .idea/
 .vs/
 storybook-static/
+coverage/
+
