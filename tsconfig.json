@@ -20,4 +20,9 @@
     "src/**/*.test.tsx",
     "src/**/*.stories.tsx",
   ],
+  "include": [
+    "src/**/*",
+    "src/__tests__",
+    "jest.config.js"
+  ]
 }
