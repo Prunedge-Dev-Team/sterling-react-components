@@ -32,7 +32,7 @@ export default function Button(theme: Theme) {
                     }
                 },
                 containedInherit: {
-                    'backgroundColor': theme.palette.background.default,
+                    'backgroundColor': "#AAA",
                     'color': '#6B6C7E',
                     '&:hover': {
                         backgroundColor: '#B3CDFF'

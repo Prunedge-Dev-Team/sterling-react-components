@@ -1,22 +1,18 @@
-import { Button, styled } from "@mui/material";
-import React, { FC } from "react";
-import theme from "../theme";
+import { styled } from "@mui/material";
 import { LoadingButton } from "@mui/lab";
 
 import { ButtonProps } from "./Button.types";
 
-const CustomButton: FC<ButtonProps> = ({
+const CustomButton = ({
   buttonType,
   buttonText,
   rounded,
   onClick,
   ...props
-}) => {
+}: ButtonProps) => {
   return (
     <ButtonStyle
       {...props}
-      // @ts-ignore
-      buttonType={buttonType}
       rounded={rounded}
     >
       {buttonText}
@@ -24,18 +20,8 @@ const CustomButton: FC<ButtonProps> = ({
   );
 };
 
-export default CustomButton;
-
-// @ts-ignore
-const ButtonStyle = styled(LoadingButton)(({ theme, buttonType, rounded }) => ({
-  padding: rounded ? theme.spacing(1, 8) : theme.spacing(0.2, 6),
+const ButtonStyle = styled(LoadingButton)(({ rounded }) => ({
   borderRadius: rounded ? "20px" : "",
-  backgroundColor:
-    buttonType === "primary" ? theme.palette.primary.main : "#AAAAAA",
-  textTransform: "capitalize",
-  color: theme.palette.common.white,
-  "&:hover": {
-    background:
-      buttonType === "primary" ? theme.palette.primary.light : "#898787",
-  },
 }));
+
+export default CustomButton;
