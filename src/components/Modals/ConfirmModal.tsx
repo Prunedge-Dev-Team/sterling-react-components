@@ -6,48 +6,68 @@ import DialogContentText from '@mui/material/DialogContentText'
 import DialogTitle from '@mui/material/DialogTitle'
 import Slide from '@mui/material/Slide'
 import { TransitionProps } from '@mui/material/transitions'
-import { Box, styled } from '@mui/material'
-import { LoadingButton } from '@mui/lab'
+import { styled } from "@mui/material";
+import { LoadingButton } from "@mui/lab";
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
-    children: React.ReactElement<any, any>
+    children: React.ReactElement<any, any>;
   },
   ref: React.Ref<unknown>
 ) {
-  return <Slide direction='up' ref={ref} {...props} />
-})
+  return <Slide direction="up" ref={ref} {...props} />;
+});
 
 export interface IConfirmDialogProps {
-  open: boolean
-  modalText: string
-  onClose: () => void
-  onConfirm: () => void
-  loading?: boolean
+  open: boolean;
+  modalText: string;
+  onClose: () => void;
+  onConfirm: () => void;
+  loading?: boolean;
 }
 
-export default function ConfirmModal(props: IConfirmDialogProps) {
-  const { onClose, open, modalText, onConfirm, loading } = props
-
+const ConfirmModal: React.FC<IConfirmDialogProps> = ({
+  onClose,
+  open,
+  modalText,
+  onConfirm,
+  loading,
+}) => {
   return (
     <div>
-      <Dialog open={open} TransitionComponent={Transition} keepMounted onClose={onClose} aria-describedby='alert-dialog-slide-description'>
-        <DialogTitle>{''}</DialogTitle>
+      <Dialog
+        open={open}
+        TransitionComponent={Transition}
+        keepMounted
+        onClose={onClose}
+        aria-describedby="alert-dialog-slide-description"
+      >
+        <DialogTitle>{""}</DialogTitle>
         <DialogContent>
-          <DialogContentText id='alert-dialog-slide-description' textAlign='center' fontWeight={700}>
+          <DialogContentText
+            id="alert-dialog-slide-description"
+            textAlign="center"
+            fontWeight={700}
+          >
             {modalText}
           </DialogContentText>
         </DialogContent>
         <DialogActionsStyle>
-          <DialogButtonStyle onClick={onConfirm} variant='contained' loading={loading}>
+          <DialogButtonStyle
+            onClick={onConfirm}
+            variant="contained"
+            loading={loading}
+          >
             Yes
           </DialogButtonStyle>
           <DialogButtonSecStyle onClick={onClose}>No</DialogButtonSecStyle>
         </DialogActionsStyle>
       </Dialog>
     </div>
-  )
-}
+  );
+};
+
+export default ConfirmModal;
 
 const DialogActionsStyle = styled(DialogActions)(({ theme }) => ({
   justifyContent: 'center',
