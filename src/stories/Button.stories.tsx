@@ -5,7 +5,7 @@ import Button from '../components/Button/Button';
 import ThemeProviderWrapper from './ThemeProviderWrapper'
 
 export default {
-  title: "Marbella/Button",
+  title: "SterlingCore/Button",
   component: Button,
   argTypes: {},
 } as ComponentMeta<typeof Button>;
