@@ -6,6 +6,7 @@ import TableRow from '../components/table/TableRow';
 import Status from '../components/Status';
 import MoreMenu from '../components/moreMenu/MoreMenu';
 import ThemeProviderWrapper from './ThemeProviderWrapper';
+import { roleManagementMockData } from './mock/tableRows';
 
 export default {
     title: "SterlingCore/Table/Row",
@@ -26,11 +27,12 @@ const menuOptions = [
     },
 ];
 
+const data = roleManagementMockData[0];
 const rowData = {
-    role: "Admin",
-    updated: "9am today",
-    status: <Status text="Pending" bgcolor='warning.main' />,
-    description: "Admin was added by superadmin",
+    role: data.role,
+    updated: data.updated,
+    status: <Status text={data.status} bgcolor='warning.main' />,
+    description: data.description,
     action: <MoreMenu options={menuOptions} />
 };
 
