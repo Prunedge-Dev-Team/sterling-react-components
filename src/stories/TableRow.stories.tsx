@@ -2,9 +2,9 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import DehazeIcon from '@mui/icons-material/Dehaze';
 
-import TableRow from '../components/table/TableRow';
+import TableRow from '../components/Table/TableRow';
 import Status from '../components/Status';
-import MoreMenu from '../components/moreMenu/MoreMenu';
+import MoreMenu from '../components/MoreMenu/MoreMenu';
 import ThemeProviderWrapper from './ThemeProviderWrapper';
 import { roleManagementMockData } from './mock/tableRows';
 

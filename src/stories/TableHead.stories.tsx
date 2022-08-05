@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Box, IconButton, Typography, Card } from '@mui/material'
 import VisibilityIcon from '@mui/icons-material/Visibility';
 
-import TableHead from '../components/table/TableHead';
+import TableHead from '../components/Table/TableHead';
 import ThemeProviderWrapper from './ThemeProviderWrapper';
 
 export default {
