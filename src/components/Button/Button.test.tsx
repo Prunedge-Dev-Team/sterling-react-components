@@ -7,7 +7,7 @@ import Button from "./Button";
 describe("Running Test for Marbella Button", () => {
 
   test("Check Button Disabled", () => {
-    render(<Button text="Button marbella" disabled/>)
+    render(<Button buttonText="Button marbella" buttonType="primary" />);
     expect(screen.getByRole('button',{name:"Button marbella"})).toBeDisabled();
   });
 
