@@ -1,9 +1,8 @@
-import {  MouseEventHandler } from "react";
+import { FC, MouseEventHandler } from "react";
 
 export interface ButtonProps {
-    text?: string,
-    primary?: boolean,
-    disabled?: boolean,
-    size?: "small" | "medium" | "large",
+    buttonText: string | FC
+    buttonType: 'primary' | 'secondary'
+    rounded?: boolean
     onClick?: MouseEventHandler<HTMLButtonElement>
 }

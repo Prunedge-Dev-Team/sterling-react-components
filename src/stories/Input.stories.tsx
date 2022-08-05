@@ -4,7 +4,7 @@ import Input  from '../components/Input/Input';
 import {InputProps} from "../components/Input/Input.types"
 
 export default {
-  title: 'Marbella/Input',
+  title: 'SterlingCore/Input',
   component: Input,
   argTypes: {
   },

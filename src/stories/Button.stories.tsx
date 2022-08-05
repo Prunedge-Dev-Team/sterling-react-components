@@ -1,60 +1,33 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import Button  from '../components/Button/Button';
-import { ButtonProps } from "../components/Button/Button.types"
-
+import Button from '../components/Button/Button';
+import ThemeProviderWrapper from './ThemeProviderWrapper'
 
 export default {
-  title: 'Marbella/Button',
+  title: "SterlingCore/Button",
   component: Button,
-  argTypes: {
-  },
+  argTypes: {},
 } as ComponentMeta<typeof Button>;
 
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+const Template: ComponentStory<typeof Button> = (args) => (
+  <ThemeProviderWrapper>
+    <Button {...args} />
+  </ThemeProviderWrapper>
+);
 
 export const Primary = Template.bind({});
 Primary.args = {
-  primary: true,
-  disabled: false,
-  text: 'Primary',
+  buttonText: "Primary",
+  color: "primary",
+  variant: "contained",
+  rounded: true,
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-  primary: false,
-  disabled: false,
-  text: "Secondary",
-};
-
-export const Disabled = Template.bind({});
-Disabled.args = {
-  primary: false,
-  disabled: true,
-  text: 'Disabled',
-};
-
-export const Small = Template.bind({});
-Small.args = {
-  primary: true,
-  disabled: false,
-  size:"small",
-  text: 'Small',
-};
-
-export const Medium = Template.bind({});
-Medium.args = {
-  primary: true,
-  disabled: false,
-  size:"medium",
-  text: 'Medium',
-};
-
-export const Large = Template.bind({});
-Large.args = {
-  primary: true,
-  disabled: false,
-  size:"large",
-  text: 'Large',
+  buttonText: "Secondary",
+  color: "inherit",
+  variant: "contained",
+  rounded: true,
 };
